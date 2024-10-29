@@ -2,7 +2,10 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+ 	scroll-behavior: smooth;
 }
+
+
 
 /**********************************/
 /* 0. Variáveis
@@ -20,21 +23,18 @@
 /**********************************/
 /* 0. Variáveis
 /**********************************/
-
 :root {
 	--ff-primary: "Nunito", Helvetica, Arial, sans-serif;
-
-	--clr-green-dark: #049a40;
-	--clr-green-light: #0bf96a;
-	--clr-pink-dark: #e10bf9;
-	--clr-pink-light: #f3a0fd;
-	--clr-white: #f5f5f5;
+	
+	--clr-green-dark: #049A40; 
+	--clr-green-light: #0BF96A; 
+	--clr-pink-dark: #E10BF9; 
+	--clr-pink-light: #F3A0FD;
+	--clr-white: #F5F5F5; 
 }
-
 /**********************************/
 /* 1. Estilos gerais
 /**********************************/
-
 body {
 	background-color: var(--clr-white);
 	font-family: var(--ff-primary);
@@ -57,6 +57,16 @@ hr {
 	margin: 20px auto;
 }
 
+p {
+	line-height: 21.82px;
+	padding: 0 10px;
+}
+
+.section__titulo {
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 10px;
+}
 /**********************************/
 /* 2. Menu
 /**********************************/
@@ -70,24 +80,25 @@ hr {
 	justify-content: space-between;
 	max-width: 960px;
 	margin: 0 auto;
+	flex-wrap: wrap;
 }
 
-.menu_logo {
+.menu__logo {
 	margin: 10px;
 }
 
-.nav_list {
+.nav__list {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.nav_link {
+.nav__link {
 	padding: 20px 10px;
 }
+
 /**********************************/
 /* 3. Header
 /**********************************/
-
 .intro {
 	font-weight: bold;
 	font-size: 3rem;
@@ -95,28 +106,286 @@ hr {
 	margin: 0 auto;
 	padding: 25px 0;
 }
-
 /**********************************/
 /* 4. Quem somos
 /**********************************/
+.somos {
+	max-width: 960px;
+	margin: 0 auto;
+}
 
+.somos-c {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.somos-c__texto {
+	flex: 6 1 160px;
+}
 /**********************************/
 /* 5. Nossos cursos
 /**********************************/
 
+
+.cursos {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.cursos-c {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.curso {
+	width: 280px;
+	margin: 0 20px;
+}
+
+.curso__titulo {
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 10px 0 5px 0;
+}
 /**********************************/
 /* 6. Planos
 /**********************************/
+.planos {
+	background-color: var(--clr-pink-light);
+	margin: 0 auto;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
 
+.planos-c {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	
+}
+
+.plano {
+	border: 4px solid var(--clr-green-light);
+	margin: 15px auto;
+	text-align: center;
+	padding: 25px;
+	margin-left: 20px;
+	width: 280px;
+	margin: 20px 20px;
+}
+
+.plano:last-child {
+	background-color: var(--clr-green-light);
+	border: 4px solid var(--clr-pink-dark);
+	text-align: center;
+	padding: 25px;
+}
+
+
+.plano__titulo {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.plano__preco {
+	font-size: 2.5rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	margin: 15px 0 0 0;
+}
+
+.plano__preco > sup {
+	font-size: 1.5rem;
+}
+
+.plano__preco__linha {
+	background-color: var(--clr-green-light);
+	width: 9%;
+	margin-top: -2%;
+}
+
+.plano-lista {
+	text-align: center;
+}
+
+.plano-lista__item {
+margin: 10px 0;
+font-style: italic;
+display: flex;
+align-items: center;
+}
+
+.plano-lista__item::before {
+	background-color: var(--clr-green-light);
+	border-radius: 5px;
+	content: "";
+	display: block;
+	height: 5px;
+	margin-right: 5px;
+	width: 5px;
+}
+
+.plano:nth-child(3) .plano-lista__item::before {
+	background-color: var(--clr-green-dark);
+	border-radius: 5px;
+	content: "";
+	display: block;
+	height: 5px;
+	margin-right: 5px;
+	width: 5px;
+}
+
+.plano__comprar {
+	background-color: var(--clr-pink-light);
+	border: 5px solid var(--clr-green-light);
+	cursor: pointer;
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: 4%;
+}
+
+.plano:nth-child(3) button {
+	background-color: var(--clr-green-light);
+	border: 5px solid var(--clr-pink-dark);
+	cursor: pointer;
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: 4%;
+}
+
+@media  (max-width: 800px){
+	.plano:nth-child(3){
+		order: -2;
+	}
+	.plano:nth-child(2){
+		order: -1;
+	}
+	.plano:nth-child(1){
+		order: 0;
+	}
+}
 /**********************************/
 /* 7. Vantagens
 /**********************************/
+.vantagens {
+	max-width: 960px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
 
+.vantagem {
+	max-width: 240px;
+	margin: 10px;
+}
+
+.vantagem__titulo {
+	font-size: 1.7rem;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+
+.vantagem__titulo::before {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+.vantagem:nth-of-type(3n+1) .vantagem__titulo::before{
+	background-color: var(--clr-green-light);
+}
+
+.vantagem:nth-of-type(3n+2) .vantagem__titulo::before{
+	background-color: var(--clr-pink-dark);
+}
+.vantagem:nth-of-type(3n+3) .vantagem__titulo::before{
+	background-color: var(--clr-green-dark);
+}
+
+@media (max-width: 800px) {
+	.vantagem {
+		max-width: 220px;
+	}
+}
 /**********************************/
 /* 8. Newsletter
 /**********************************/
+.newsletter {
+	background-color: var(--clr-green-light);
+}
 
+.newsletter-c {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.newsletter-info {
+	flex: 1 1 260px;
+	padding-left: 10px;
+}
+
+.newsletter-info__titulo {
+	font-size: 2.62rem;
+	font-weight: bold;
+}
+
+.newsletter-info__descricao {
+	font-style: italic;
+}
+
+.newsletter-form {
+	flex: 2 1 260px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.newsletter-form__input {
+	flex: 3 1 260px;
+	font-size: 1.25rem;
+	width: 325px;
+	color: black;
+	font-style: italic;
+	font-family: var(--ff-primary);
+	border: 10px solid var(--clr-pink-dark);
+	padding: 10px;
+	margin: 0;
+	border-radius: 0px;
+}
+
+.newsletter-form__submit {
+	flex: 1 1 260px;
+	width: 192px;
+	font-family: var(--ff-primary);
+	font-size: 2.25rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: var(--clr-pink-dark);
+	color: black;
+	cursor: pointer;
+	border: none;
+	padding: 15px;
+}
 /**********************************/
 /* 9. Footer
 /**********************************/
+.footer {
+	background-color: var(--clr-pink-light);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 55px calc((100% - 960px) / 2);
+}
 
+.footer__copyright, .footer__logo {
+padding-left: 10px;
+padding-right: 10px;
+}
